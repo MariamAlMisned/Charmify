@@ -1,4 +1,4 @@
-Ss<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -216,6 +216,17 @@ Ss<!DOCTYPE html>
   .confirm-box .big-emoji{ font-size:44px; margin-bottom:14px; }
   .confirm-box h2{ font-family:'Fredoka',sans-serif; color:var(--teal-dark); margin-bottom:8px; }
   .confirm-box p{ color:var(--sub); font-size:14px; }
+
+  .contact-footer{
+    margin-top:26px; padding-top:18px; border-top:1px dashed var(--hole);
+    text-align:center; font-size:13px; color:var(--sub);
+  }
+  .contact-footer .ct-title{ font-weight:600; color:var(--ink); margin-bottom:6px; }
+  .contact-footer a{ color:var(--teal-dark); text-decoration:none; font-weight:600; }
+  .cancel-link{
+    display:inline-block; margin-top:14px; font-size:13px; color:var(--coral);
+    text-decoration:underline; cursor:pointer; background:none; border:none;
+  }
 </style>
 </head>
 <body>
@@ -256,7 +267,7 @@ Ss<!DOCTYPE html>
   <div class="screen" id="screen-checkout">
     <button class="back-btn" onclick="showScreen('cart')">&larr; Back to cart</button>
     <div class="section-title">Delivery details</div>
-    <div class="cash-note">💵 <b>Cash on delivery only</b> — pay the total below (incl. 10 QR shipping) when your order arrives.</div>
+    <div class="cash-note">💵 <b>Cash on delivery only</b> — pay the total below (incl. 15 QR shipping) when your order arrives.</div>
     <form name="charmify-order" method="POST" action="https://formspree.io/f/xqpzynwd" id="order-form" onsubmit="submitOrder(event)">
       <input type="hidden" name="_subject" value="New Charmify Order" />
       <div class="checkout-grid">
@@ -298,7 +309,7 @@ Ss<!DOCTYPE html>
 </div>
 
 <script>
-  var SHIPPING_FEE = 10;
+  var SHIPPING_FEE = 15;
 
   var CATEGORIES = [
     {
@@ -328,6 +339,15 @@ Ss<!DOCTYPE html>
         { name: 'Camel', price: 18 },
         { name: 'Mini palm tree keychain', price: 18 },
         { name: 'Medium palm tree keychain', price: 20 }
+      ]
+    },
+    {
+      id: 'ponies',
+      name: 'My Little Pony keychains',
+      emoji: '🦄',
+      options: [
+        { name: 'Pinkie Pie', price: 15 },
+        { name: 'Twilight Sparkle', price: 15 }
       ]
     }
   ];
